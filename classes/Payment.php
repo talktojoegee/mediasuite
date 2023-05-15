@@ -838,7 +838,7 @@ class SAP_Payment {
 				<tbody>
 					<tr>
 						<td><?php echo $plan_data->name?></td>
-						<td>$<?php echo  $plan_data->price ?></td>
+						<td>₦<?php echo  $plan_data->price ?></td>
 					</tr>
 				</tbody>
 				<tfoot>
@@ -858,7 +858,7 @@ class SAP_Payment {
 					<?php } ?>
 					<tr class="rcp-total">
 						<th><?php echo $this->sap_common->lang('total') ?></th>
-						<td>$<?php echo  $plan_data->price ?></td>
+						<td>₦<?php echo  $plan_data->price ?></td>
 					</tr>
 					
 					<tr>
