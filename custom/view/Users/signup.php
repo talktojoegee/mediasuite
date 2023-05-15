@@ -121,7 +121,10 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
                                     <div class="row">
                                         <?php 
                                         if( count($plans) > 1 ){ ?>
-                                        <label class="col-sm-4 col-md-3"><?php echo $sap_common->lang('choose_membership'); ?></label>
+                                            <div class="alert alert-success w-100">
+                                                <?php echo $sap_common->lang('choose_membership'); ?>
+                                            </div>
+
                                     <?php } ?>
                                         <div class="col-sm-8 col-md-9">
                                         <?php 
