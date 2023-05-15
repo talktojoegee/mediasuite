@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/mediasui/public_html/application/
+    - /bin/cp -R * $DEPLOYPATH
