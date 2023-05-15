@@ -838,7 +838,7 @@ class SAP_Payment {
 				<tbody>
 					<tr>
 						<td><?php echo $plan_data->name?></td>
-						<td>₦<?php echo  $plan_data->price ?></td>
+						<td>₦<?php echo  number_format($plan_data->price,2) ?></td>
 					</tr>
 				</tbody>
 				<tfoot>
@@ -858,7 +858,7 @@ class SAP_Payment {
 					<?php } ?>
 					<tr class="rcp-total">
 						<th><?php echo $this->sap_common->lang('total') ?></th>
-						<td>₦<?php echo  $plan_data->price ?></td>
+						<td>₦<?php echo  number_format($plan_data->price,2) ?></td>
 					</tr>
 					
 					<tr>
@@ -1322,11 +1322,11 @@ class SAP_Payment {
 				  	<tbody>
 					    <tr>
 					      	<td><?php echo $up_plan_data->name ?></td>
-					      	<td>$<?php echo round($up_plan_data->price,2) ?></td>
+					      	<td>₦<?php echo number_format(round($up_plan_data->price,2)) ?></td>
 					    </tr>
 					    <tr>
 					      	<td><?php echo $this->common->lang('proration_credit') ?></td>
-					      	<td> - $<?php echo round($discount_amt,2) ?></td>
+					      	<td> - ₦<?php echo number_format(round($discount_amt,2)) ?></td>
 					    </tr>
 
 					    <tr>
@@ -1346,7 +1346,7 @@ class SAP_Payment {
 				    <tfoot>
 					    <tr>
 					      	<th><?php echo $this->common->lang('total_price') ?></th>
-					      	<th>$<?php echo round($up_plan_data->price - $discount_amt,2) ; ?></th>
+					      	<th>₦<?php echo number_format(round($up_plan_data->price - $discount_amt,2)) ; ?></th>
 					    </tr>
 				  	</tfoot>
 			</table>

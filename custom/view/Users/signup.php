@@ -156,7 +156,7 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
                                                     $plan_price = 'Free';
                                                     
                                                     if( !empty( $plan->price)){
-                                                        $plan_price = "₦".$plan->price;
+                                                        $plan_price = "₦".number_format($plan->price,2);
                                                     }
 
                                                     $subscription_expiration_days = 'Never';
