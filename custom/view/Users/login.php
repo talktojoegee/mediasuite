@@ -26,7 +26,7 @@
         <!-- login -->
         <div class="login-box">
             <div class="login-logo">
-                <img src="<?php echo SAP_SITE_URL .'/assets/images/Mingle-Logo.svg'; ?>" class="mingle-logo" />
+                <img src="<?php echo SAP_SITE_URL .'/assets/images/logo_white.png'; ?>" class="mingle-logo" />
                 <p><?php echo SAP_NAME; ?></p>
             </div>
             <!-- /.login-logo -->

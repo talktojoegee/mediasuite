@@ -73,7 +73,7 @@ if( !empty( $user_id ) && isset( $this->settings ) && !empty( $this->settings ) 
         <?php sap_check_user_payment_status() ?>
         <header class="main-header">
             <div class="pull-left image logo-class">
-              <img src="<?php echo SAP_SITE_URL.'/assets/images/wp-logo-white.svg'; ?>" alt="User Image">
+              <img src="<?php echo SAP_SITE_URL.'/assets/images/logo_white.png'; ?>" alt="User Image">
           </div>
           <!-- Logo -->
           <a href="<?php echo SAP_SITE_URL; ?>/posts/" class="logo sap-logo-text">
