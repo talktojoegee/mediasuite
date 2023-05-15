@@ -333,7 +333,7 @@ class Common {
 	 * limit
 	 * 
 	 * @package Social Auto Poster
-	 * @since 1.0.0
+	 * @since 1.0.0 CEZ^mmYLF]GN
 	 * */
 	public function sap_content_excerpt($content, $charlength = 140) {
 
