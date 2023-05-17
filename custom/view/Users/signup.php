@@ -250,8 +250,27 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
                 ]
             },
             callback: function(response){
-                console.log(response)
-                alert('success. transaction ref is ' + response.reference);
+                //console.log(response)
+                //console.log(response.status)
+                let addMemberForm = document.getElementById('add-member');
+                //let form = new FormData(addMemberForm);
+                //form.append("payment");
+                /*
+
+                message: "Approved"
+                redirecturl: "http://127.0.0.1:8000/process/payment?trxref=251413622&reference=251413622"
+                reference: "251413622"
+                status: "success"
+                trans: "2810869915"
+                transaction: "2810869915"
+                trxref: "251413622"
+                 */
+                //alert('success. transaction ref is ' + response.reference);
+                if(response.status === 'success'){
+                    addMemberForm.submit();
+                }else{
+                    alert("Whoops! We couldn't process your payment. Try again.");
+                }
 
             },
             onClose: function(){
