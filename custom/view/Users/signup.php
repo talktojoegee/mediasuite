@@ -225,7 +225,7 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
             let handler = PaystackPop.setup({
                 key: 'pk_test_6fe7c79e4f286e079ff0fffce4df82597f2e695b',
                 email: email,
-                amount: total,
+                amount: (total*100),
                 ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
                 metadata: {
                     custom_fields: [
