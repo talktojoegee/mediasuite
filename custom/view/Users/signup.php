@@ -181,123 +181,16 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
                             <div class="row payment_method_cls">
                                 <div class="col-md-12 form-group">
                                     <div class="row">
-                                        <label class="col-sm-4 col-md-3"><?php echo $sap_common->lang('choose_payment'); ?></label>
+
                                         <div class="col-sm-8 col-md-9 gateway_checkbox">
-                                            <?php
-
-                                            $stripe_label = !empty($stripe_label) ? $stripe_label : 'Stripe';
-
-                                            if(!empty($payment_gateway)){
-
-                                                $payment_gateway = explode(',',$payment_gateway);
-                                                
-                                                foreach($payment_gateway as $data){
-                                                ?>
-                                                <div class="form-check">
-                                                      <input class="form-check-input payment-gateway" type="radio" name="gateway_type" value="<?php echo $data ?>" id="payment_<?php echo $data ?>" <?php if($data == $default_payment_method){ echo 'checked'; } ?>>
-                                                      <label class="form-check-label" for="payment_<?php echo $data ?>">
-                                                        <?php if($data == 'stripe'){ echo $stripe_label; }else{ echo ucfirst($data); } ?>
-                                                      </label>
-                                                </div>
-                                                <?php 
-                                                }
-                                            }
-                                            else{
-                                                ?>
-                                                <div class="alert alert-danger" role="alert">
-                                                <?php echo $sap_common->lang('signup_payment_help_text'); ?>
-                                                </div>
-                                                <?php 
-                                            }
-                                            ?>
-                                            
+                                            <img src="<?php echo SAP_SITE_URL .'/assets/images/paystack.png'; ?>" alt="Secured by Paystack">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <?php 
-                            $payment_gateway_array = !empty($payment_gateway) ? $payment_gateway : array();
 
 
-                            if( in_array( 'stripe', $payment_gateway_array)){
 
-
-                                if( $stripe_test_mode == 'yes'){  
-                                ?>
-
-                                <div class="stripe-payment-fields" style="display:<?php if('stripe' == $default_payment_method){ echo 'block'; }else{ echo 'none'; } ?>;" >
-                                      <div class="row">
-                                            <div class="col-xs-12 col-md-12">
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading">
-                                                         <?php echo sprintf($sap_common->lang('signup_test_help_text'),'<h3 class="panel-title">','</h3>','<span>','</span>'); ?>
-                                                    </div>
-
-                                                <div class="panel-body">
-                                                    <?php echo sprintf($sap_common->lang('signup_card_details'),'<p>','<b>','</b>','</p>','<p>','<b>','</b>','</p>','<p>','<b>','</b>','</p>','<p>','<a href="https://stripe.com/docs/testing#cards" target="_blank">','</a>','</p>'); ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php } ?>
-
-                            <div class="stripe-payment-fields" style="display:<?php if('stripe' == $default_payment_method){ echo 'block'; }else{ echo 'none'; } ?>;" >
-                                <input type="hidden" name="action" value="stripe">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-md-12">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h3 class="panel-title"><?php echo $sap_common->lang('signup_payment_details'); ?></h3>
-                                                </div>
-
-                                            <div class="panel-body">
-                                                
-                                                <div class="form-group">
-                                                    <label for="card_number"><?php echo $sap_common->lang('signup_card_number'); ?><span class="astric">*</span></label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="card-number form-control" size="20" id="card_number" value="<?php echo isset( $register_data['card_number'] )  ? $register_data['card_number'] : '' ?>" autocomplete="off" placeholder="<?php echo $sap_common->lang('signup_valid_card_number'); ?>"
-                                                            required autofocus name="card_number" />
-                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-xs-7 col-md-7">
-                                                        
-                                                        <div class="form-group">
-                                                            <label class="card_exp_label" for="card_exp_month"><?php echo $sap_common->lang('signup_expiry_date'); ?><span class="astric">*</span></label>
-                                                            <div class="col-xs-6 col-lg-6 pl-ziro">
-                                                                <input value="<?php echo isset( $register_data['card_exp_month'] )  ? $register_data['card_exp_month'] : '' ?>" type="text" class="card-expiry-month form-control" size="2" id="card_exp_month" name="card_exp_month" placeholder="<?php echo $sap_common->lang('signup_card_mm'); ?>" required />
-                                                            </div>
-                                                            <div class="col-xs-6 col-lg-6 ">
-                                                                <input type="text" class="card-expiry-year form-control" id="card_exp_year" name="card_exp_year" value="<?php echo isset( $register_data['card_exp_year'] )  ? $register_data['card_exp_year'] : '' ?>"  size="4" placeholder="<?php echo $sap_common->lang('signup_card_yy'); ?>" required />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-5 col-md-5 pull-right">
-                                                        <div class="form-group">
-                                                            <label for="card_cvv"><?php echo $sap_common->lang('signup_card_cvv_num'); ?><span class="astric">*</span></label>
-                                                            <input size="4" value="<?php echo isset( $register_data['card_cvv'] )  ? $register_data['card_cvv'] : '' ?>"   autocomplete="off" type="password" class="card-cvc form-control" id="card_cvv" placeholder="<?php echo $sap_common->lang('signup_card_cvv_plh'); ?>" name="card_cvv" required/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                            <div class="row auto-renew-opt" style="display:<?php if('stripe' == $default_payment_method){ echo 'block'; }else{ echo 'none'; } ?>;">
-                                <label class="col-sm-2 col-md-2"><?php echo $sap_common->lang('signup_auto_renew'); ?></label>
-                                <div class="col-sm-8 col-md-9">                                    
-                                    <input type="checkbox" class="tgl tgl-ios" name="auto_renew" id="auto_renew" value="1">
-                                    <label class="tgl-btn float-right-cs-init" for="auto_renew"></label>
-                                </div>
-                               
-                            </div>
-                        <?php }
-                        }
-                        if( !empty($payment_gateway) ){ ?>
                             <div class="sap-mt-1 col-md-12 form-group">
                                 <input type="hidden" name="form-submitted" value="1">
                                 <button type="submit" name="sap_add_member_submit" class="btn btn-primary"><?php echo $sap_common->lang('signup_register_btn'); ?></button>
@@ -322,14 +215,8 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
     <script src="<?php echo SAP_SITE_URL . '/assets/js/bootstrap.min.js'; ?>"></script>
     <script src="<?php echo SAP_SITE_URL . '/assets/js/jQuery-validate/jquery.validate.js' ?>"></script>
     <script src="<?php echo SAP_SITE_URL . '/assets/js/mingle-login.js'; ?>"></script>
-<?php
-    $publish_key = 'pk_test_bkY4rAXSqiPVNOgXUmhDxpFy';
-?>
 
-<script type="text/javascript">
-    var stripe_publishable_key = "<?php echo $publish_key;?>";    
-    </script>
-<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
-<script type="text/javascript" src="<?php echo SAP_SITE_URL .'/assets/js/stripe-processing.js' ?>"></script>
+
+
 </body>
 </html>
