@@ -193,7 +193,7 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
 
                             <div class="sap-mt-1 col-md-12 form-group">
                                 <input type="hidden" name="form-submitted" value="1">
-                                <button type="submit" name="sap_add_member_submit" class="btn btn-primary"><?php echo $sap_common->lang('signup_register_btn'); ?></button>
+                                <button onclick="payWithPaystack()" type="button" name="sap_add_member_submit" class="btn btn-primary"><?php echo $sap_common->lang('signup_register_btn'); ?></button>
                             </div>
                             <a class="text-center login-link" href="<?php echo SAP_SITE_URL ?>"><?php echo $sap_common->lang('back_to_login_text'); ?></a>
                         </div>
@@ -215,8 +215,36 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
     <script src="<?php echo SAP_SITE_URL . '/assets/js/bootstrap.min.js'; ?>"></script>
     <script src="<?php echo SAP_SITE_URL . '/assets/js/jQuery-validate/jquery.validate.js' ?>"></script>
     <script src="<?php echo SAP_SITE_URL . '/assets/js/mingle-login.js'; ?>"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 
-
-
+    <script>
+        function payWithPaystack(){
+            let email = document.getElementById('sap_email');
+            let firstName = document.getElementById('sap_firstname');
+            let total = document.getElementById('unformattedTotal');
+            let handler = PaystackPop.setup({
+                key: 'pk_test_6fe7c79e4f286e079ff0fffce4df82597f2e695b',
+                email: email,
+                amount: total,
+                ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                metadata: {
+                    custom_fields: [
+                        {
+                            display_name: firstName,
+                            variable_name: "mobile_number",
+                            value: "+2348012345678"
+                        }
+                    ]
+                },
+                callback: function(response){
+                    alert('success. transaction ref is ' + response.reference);
+                },
+                onClose: function(){
+                    alert('window closed');
+                }
+            });
+            handler.openIframe();
+        }
+    </script>
 </body>
 </html>

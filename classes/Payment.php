@@ -859,6 +859,7 @@ class SAP_Payment {
 					<tr class="rcp-total">
 						<th><?php echo $this->sap_common->lang('total') ?></th>
 						<td>₦<?php echo  number_format($plan_data->price,2) ?></td>
+                        <input type="hidden" value="<?php echo $plan_data->price ?>" id="unformattedTotal">
 					</tr>
 					
 					<tr>

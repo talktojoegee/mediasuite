@@ -40,7 +40,7 @@ $default_payment_method = $this->setting->get_options('default_payment_method');
         <!-- login -->
         <div class="thank-you-box">
             <div class="login-logo">
-                <img src="<?php echo SAP_SITE_URL .'/assets/images/Mingle-Logo.svg'; ?>" class="mingle-logo" />
+                <img src="<?php echo SAP_SITE_URL .'/assets/images/logo_white.png'; ?>" class="mingle-logo" />
                 <p><?php echo $sap_common->lang('thank_you_msg'); ?></p>
             </div>
             <?php echo $this->flash->renderFlash(); ?>

@@ -632,7 +632,7 @@ class SAP_Users {
 				$_POST['user_id'] = $user_id;				
 
 				//Check Payment gateway type
-				if(isset($_POST['gateway_type']) && !empty($_POST['gateway_type']) && $_POST['gateway_type'] == 'stripe'){
+				/*if(isset($_POST['gateway_type']) && !empty($_POST['gateway_type']) && $_POST['gateway_type'] == 'stripe'){
 					
 					$stripe_payment_result = $this->payment->make_payment( $_POST );
 						
@@ -649,7 +649,7 @@ class SAP_Users {
 				if(isset($_POST['gateway_type']) && !empty($_POST['gateway_type']) && $_POST['gateway_type'] == 'manual'){ 
 
 					$this->payment->make_manual_payment( $_POST );
-				}
+				}*/
 				
 				if( !isset( $_POST['gateway_type'] ) ){ //For Free Plan
 				
