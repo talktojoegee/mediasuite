@@ -139,7 +139,7 @@ span.astric{
 .custom-user-list-init li{text-align: center;}
 .info-custom-box-content-init{height: 90px;text-align: left;}
 .manage-btn-inti{
-	border: 1px solid #3c8dbc;
+	border: 1px solid #002A3A;
 	padding: 3px 10px;
 	border-radius: 50px;
 	display: inline-block;
@@ -172,7 +172,7 @@ span.astric{
 #payment_gateways .nav-tabs-custom{
 	padding: 25px;
 }
-.manage-btn-inti:hover {background: #3c8dbc;color: #fff;}
+.manage-btn-inti:hover {background: #002A3A;color: #fff;}
 .info-custom-box-content-init .info-box-text{margin-top: 16px;}
 .tgl {
 	display: none;
@@ -368,8 +368,8 @@ span.astric{
 .sap-loader-img{
 	border:5px solid #f3f3f3;
 	border-radius:50%;
-	border-top:5px solid #02aace;
-	border-bottom:5px solid #02aace;
+	border-top:5px solid #002A3A;
+	border-bottom:5px solid #002A3A;
 	width:50px;
 	height:50px;
 	-webkit-animation:spin 2s linear infinite;
@@ -492,8 +492,8 @@ span.astric{
 	border-radius: 0;
 }
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-	background-color: #3c8dbc;
-	border-color: #367fa9;
+	background-color: #002A3A;
+	border-color: #002A3A;
 	padding: 1px 10px;
 	color: #fff;
 }
@@ -543,7 +543,7 @@ span.astric{
 }
 .sap-schedule-icon{
 	font-size: 25px;
-	color: #3c8dbe;
+	color: #002A3A;
 	cursor: pointer;
 }
 .sap-schedule-input{
@@ -600,9 +600,9 @@ li.sap-graph-social-type{
 	vertical-align: top;
 }
 .sap-filter-btn-wrap input[type="radio"]:checked + label {
-	background: #32ade3;
+	background: #002A3A;
 	color: #fff;
-	border: 1px solid #32ade3;
+	border: 1px solid #002A3A;
 }
 
 .sap-loader-wrap {
@@ -667,7 +667,7 @@ section.sap-quick-post>div>form .tgl + .tgl-btn{
 	height: 34px;
 }
 .sap-fade-message {
-	background: none repeat scroll 0 0 #4999ce;
+	background: none repeat scroll 0 0 #002A3A;
 	border-radius: 10px;
 	top: 50%;
 	color: #fff;
@@ -858,7 +858,7 @@ label.auth-option{
 }
 .skin-blue .main-header .logo{
 	background: #ffffff;
-	color: #277cf3;
+	color: #002A3A;
 }
 .skin-blue .main-header .logo:hover{
 	background: #ffffff;
@@ -906,7 +906,7 @@ body.skin-blue.sidebar-mini.sidebar-collapse a.logo {
 	bottom: 0;
 	width: 50px;
 	height: 3px;
-	background: #3c8dbc;
+	background: #002A3A;
 }
 .buttons-display-flex{
 	display: flex;
@@ -965,7 +965,7 @@ label.error.twiiter-settings-error{
 }
 .sap-tab-nav-wrap ul li a.sap-tab-nav-active {
 	background: #ffffff;
-	color: #3c8dbc;
+	color: #002A3A;
 	border: 1px solid #f0f0f0;
 	border-bottom: 0;
 }
@@ -982,7 +982,7 @@ label.error.twiiter-settings-error{
 }
 .sap-tab-nav-wrap ul li a:hover {
 	background: aliceblue;
-	color: #3c8dbc;
+	color: #002A3A;
 }
 .sap-tab-content-wrap .sap-tab-content {
 	border: 1px solid #f0f0f0;
@@ -1041,7 +1041,7 @@ table#list-post {
 	font-size: 25px;
 	font-weight: 600;
 	text-transform: capitalize;
-	color: #3c8dbc;
+	color: #002A3A;
 }
 .sap-quick-post-privew-wrap .sap-quick-post-privew {
 	padding: 15px;
@@ -1054,7 +1054,7 @@ table#list-post {
 	left: 15px;
 	bottom: 0;
 	width: calc(100% - 30px);
-	background: #3c8dbc;
+	background: #002A3A;
 	height: 2px;
 }
 .sap-quick-post-privew-wrap .sap-quick-post-privew .sap-quick-post-privew-content .sap-quick-post-privew-image {
