@@ -219,9 +219,9 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
 
     <script>
         function payWithPaystack(){
-            let email = document.getElementById('sap_email');
-            let firstName = document.getElementById('sap_firstname');
-            let total = document.getElementById('unformattedTotal');
+            let email = document.getElementById('sap_email').value;
+            let firstName = document.getElementById('sap_firstname').value;
+            let total = document.getElementById('unformattedTotal').value;
             let handler = PaystackPop.setup({
                 key: 'pk_test_6fe7c79e4f286e079ff0fffce4df82597f2e695b',
                 email: email,
