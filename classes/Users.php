@@ -669,7 +669,7 @@ class SAP_Users {
 						'plan_id'           => $_POST['sap_plan'],
 						'customer_id' 	    => '',
 						'customer_name'     => $this->_db->filter($_POST['sap_firstname']) .' '. $this->_db->filter($_POST['sap_lastname']),
-						'membership_status' => '0',
+						'membership_status' => '1',
 						'recurring'			=> '0',
 						'expiration_date'   => $expiration_date,
 						'created_date'      => date('Y-m-d H:i:s'),
@@ -691,7 +691,7 @@ class SAP_Users {
 						'payment_date' 	=> date('Y-m-d H:i:s'),
 						'amount' 		=> 0,
 						'type' 			=> '0',
-						'gateway' 		=> 'manual',
+						'gateway' 		=> 'paystack',
 						'payment_status'=> '1',
 						'transaction_id'=> '',
 						'transaction_data' => '',
@@ -708,7 +708,7 @@ class SAP_Users {
 
 					$email 		= new Sap_Email();
 					$to 		= isset( $member_data['email'] ) ? $member_data['email'] : '';
-					$subject 	= "Your account created at Mingle - " . SAP_NAME;
+					$subject 	= "Your account created at  - " . SAP_NAME;
 
 					$subscription_details 	= $this->get_user_subscription_details( $user_id );
 
