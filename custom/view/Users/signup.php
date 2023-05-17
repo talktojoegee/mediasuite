@@ -183,7 +183,7 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
                                     <div class="row">
 
                                         <div class="col-sm-8 col-md-9 gateway_checkbox">
-                                            <img src="<?php echo SAP_SITE_URL .'/assets/images/paystack.png'; ?>" alt="Secured by Paystack">
+                                            <img src="<?php echo SAP_SITE_URL .'/assets/images/paystack.png'; ?>" alt="Secured by Paystack" style="width:60%; margin-top:10px;">
                                         </div>
                                     </div>
                                 </div>
