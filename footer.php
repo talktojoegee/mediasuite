@@ -6,7 +6,7 @@
         echo SAP_VERSION;
         ?>
     </div>
-    <?php echo sprintf($sap_common->lang('footer'),'<strong>','&copy',date('Y'),'<a href="https://www.wpwebelite.com" target="_blank">','</a>','</strong>'); ?>
+    <?php echo sprintf($sap_common->lang('footer'),'<strong>','&copy',date('Y'),'<a href="#" target="_blank">','</a>','</strong>'); ?>
     
 </footer>
 
