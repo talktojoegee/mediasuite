@@ -253,8 +253,9 @@ $register_data = isset($_SESSION['register_data']) ? $_SESSION['register_data'] 
                 //console.log(response)
                 //console.log(response.status)
                 let addMemberForm = document.getElementById('add-member');
-                //let form = new FormData(addMemberForm);
-                //form.append("payment");
+                let form = new FormData(addMemberForm);
+                form.append("amount", (total+charge));
+                form.append("transaction", response.transaction);
                 /*
 
                 message: "Approved"

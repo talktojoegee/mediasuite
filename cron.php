@@ -76,9 +76,11 @@ if (empty($cron_membership_expire_time) || $cron_membership_expire_time <= time(
     $settings_object->update_options('cron_membership_expire_time', $run_time);
 }
 
+/*
 if (empty($_SESSION['Update_version'])) {
 
     $updater_object = new SAP_Mingle_Update();
     $license_data = $updater_object->check_update();
     $_SESSION['Update_version'] = $license_data;
 }
+*/
